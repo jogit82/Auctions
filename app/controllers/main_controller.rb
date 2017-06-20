@@ -5,6 +5,7 @@ class MainController < ApplicationController
 
     def import
         begin
+            Auction.import_csv(params[:file].path)
             Vehicle.import_csv(params[:file].path)
             flash[:success] = "CSV file has imported into the database successfully."
             redirect_to root_url

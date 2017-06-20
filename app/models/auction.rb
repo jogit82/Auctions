@@ -1,5 +1,4 @@
 class Auction < ApplicationRecord
-    has_many :vehicles
 
     def self.import_csv(file)
         auctions = []
@@ -10,7 +9,6 @@ class Auction < ApplicationRecord
                                     state: row['state'],
                                     zip: row['zip'])
         end
-        Auction.import(auctions)
+        Auction.import auctions, on_duplicate_key_ignore: true
     end
-    
 end

@@ -1,6 +1,4 @@
 class Vehicle < ApplicationRecord
-    belongs_to :auction
-
     def self.import_csv(file)
         vehicles = []
         CSV.foreach(file, headers: true) do |row|
@@ -13,10 +11,6 @@ class Vehicle < ApplicationRecord
                                     description: row['desription'],
                                     auction_name: row['auction name'])
         end
-        vehicles.each do |v|
-            puts v.year
-        end
-        
         Vehicle.import(vehicles)
     end
 end
