@@ -1,11 +1,11 @@
 class MainController < ApplicationController
     def index
-        @auctions = Auction.all
+        @auctions = Vehicle.all
     end
 
     def import
         begin
-            Auction.import(params[:file].path)
+            Vehicle.import_csv(params[:file].path)
             flash[:success] = "CSV file has imported into the database successfully."
             redirect_to root_url
         rescue => exception

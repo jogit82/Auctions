@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: 1
+  make: MyString
+  model: MyString
+  stock_number: 1
+  winning_big: 1
+  seller_payout: 1
+  description: MyString
+  auction_name: MyString
+
+two:
+  year: 1
+  make: MyString
+  model: MyString
+  stock_number: 1
+  winning_big: 1
+  seller_payout: 1
+  description: MyString
+  auction_name: MyString

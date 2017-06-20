@@ -23,11 +23,11 @@
     <tbody>
         <% @auctions.each do |auction| %>
             <tr>
-                <td><%= auction.name %></td>
-                <td><%= auction.city %></td>
-                <td><%= auction.vehicles %></td>
-                <td><%= auction.winning_bid - auction.seller_payout %></td>
-                <td><%= (auction.winning_bid - auction.seller_payout)/auction.vehicles %></td>
+                <td><%= auction.year %></td>
+                <td><%= auction.make %></td>
+                <td><%= auction.auction_name %></td>
+                <td></td>
+                <td></td>
             </tr>
         <% end %>
     </tbody>

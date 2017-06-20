@@ -2,14 +2,14 @@
 
 one:
   name: MyString
+  street: MyString
   city: MyString
-  vehicles: 1
-  winning_bid: 1.5
-  seller_payout: 1.5
+  state: MyString
+  zip: 1
 
 two:
   name: MyString
+  street: MyString
   city: MyString
-  vehicles: 1
-  winning_bid: 1.5
-  seller_payout: 1.5
+  state: MyString
+  zip: 1

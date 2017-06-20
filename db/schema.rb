@@ -10,17 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618204510) do
+ActiveRecord::Schema.define(version: 20170620220813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "auctions", force: :cascade do |t|
     t.string   "name"
+    t.string   "street"
     t.string   "city"
-    t.integer  "vehicles"
-    t.float    "winning_bid"
-    t.float    "seller_payout"
+    t.string   "state"
+    t.integer  "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.integer  "year"
+    t.string   "make"
+    t.string   "model"
+    t.integer  "stock_number"
+    t.integer  "winning_bid"
+    t.integer  "seller_payout"
+    t.string   "description"
+    t.string   "auction_name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
