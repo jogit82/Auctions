@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621172112) do
+ActiveRecord::Schema.define(version: 20170621223926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "auctions", force: :cascade do |t|
-    t.string   "name"
+    t.string   "auction_name"
     t.string   "street"
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_auctions_on_name", unique: true, using: :btree
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["auction_name"], name: "index_auctions_on_auction_name", unique: true, using: :btree
   end
 
   create_table "vehicles", force: :cascade do |t|
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170621172112) do
     t.datetime "updated_at",    null: false
     t.integer  "auction_id"
     t.index ["auction_id"], name: "index_vehicles_on_auction_id", using: :btree
+    t.index ["stock_number"], name: "index_vehicles_on_stock_number", unique: true, using: :btree
   end
 
   add_foreign_key "vehicles", "auctions"
