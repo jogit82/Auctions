@@ -17,11 +17,11 @@ class Auction < ApplicationRecord
                                     description: row['description'],
                                     auction_name: row['auction name'])
             begin
-                Auction.import [auction], validate: false
+                Auction.import [auction]
             rescue ActiveRecord::RecordNotUnique
             end
             begin
-                Vehicle.import [vehicle], validate: false
+                Vehicle.import [vehicle]
             rescue ActiveRecord::RecordNotUnique
                 next
             end
