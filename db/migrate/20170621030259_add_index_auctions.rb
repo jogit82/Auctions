@@ -4,7 +4,7 @@ class AddIndexAuctions < ActiveRecord::Migration[5.0]
   end
 
   def down
-    remove_index :auctions, :auction_name
+    remove_index :auctions, :name
   end
   
 end
