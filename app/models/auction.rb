@@ -16,15 +16,18 @@ class Auction < ApplicationRecord
                                     seller_payout: row['seller payout'],
                                     description: row['description'],
                                     auction_name: row['auction name'])
+
             begin
-                Auction.import [auction]
+                Auction.import [auction], validate: false
             rescue ActiveRecord::RecordNotUnique
             end
+
             begin
-                Vehicle.import [vehicle]
+                Vehicle.import [vehicle], validate: false
             rescue ActiveRecord::RecordNotUnique
                 next
             end
+            
         end
     end
 end
