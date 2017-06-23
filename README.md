@@ -1,4 +1,6 @@
 # README
+# I have deployed the code on Heroku with Postgresql Database
+[View App On Heroku](https://lit-peak-71052.herokuapp.com// "View App On Heroku")
 Instructions for setting up and running app  
 -sample_data.csv file is in the main project folder  
 
